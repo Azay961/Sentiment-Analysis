@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sentiment Prediction</title>
+    <link rel="stylesheet" href="/static/styles.css"></head>
+<body>
+    <h2>Sentiment Prediction</h2><br>
+    <div class="sentiment">
+    <form id="sentiment" method="post" action = "/prediction">
+        <label><b>Input Text</b>
+        </label>
+        <input type="text" name="input_text" id="input_text" value="{{input_text}}">
+      
+        <h3>Select Model</h3>
+        <select name="model_dropdown">
+        <option value="Logistic Regression">Logistic Regression</option>
+        <option value="Random Forest">Random Forest</option>
+        </select><br><br>
+
+        <input type="submit" name="Predict" id="predict" value="Predict Sentiments">
+        <br><br>
+    </form>
+    {% if sentiment_label %}
+        <p id="sentiment_label">{{selected_model}} model predicted: {{ sentiment_label }}</p>
+
+    {% endif %}
+</div>
+</body>
+</html>
