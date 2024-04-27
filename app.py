@@ -41,5 +41,6 @@ def predict_sentiment():
     
     return render_template('index.html', sentiment_label=sentiment_label, input_text=input_text, selected_model=selected_model)
 
+if __name__ == "__main__":
     app.run(debug=True)
     # host="0.0.0.0", port="5002"
